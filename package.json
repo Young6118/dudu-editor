@@ -1,7 +1,7 @@
 {
-  "name": "@youngchou1997/dudu-editor",
+  "name": "dudu-editor",
   "version": "1.0.0",
-  "description": "",
+  "description": "rich text editor",
   "main": "dist/main.js",
   "scripts": {
     "build": "npm run lint && webpack --progress --mode=production --config ./build/webpack.config.js --env production && echo \"--------Build Success!--------\"",

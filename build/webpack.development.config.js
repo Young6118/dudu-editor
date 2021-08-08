@@ -17,7 +17,7 @@ module.exports = {
   },
 
   output: {
-    path: resolve('dist'), // 打包后的文件存放的地方
+    path: resolve('demo'), // 打包后的文件存放的地方
     filename: '[name].js' // 打包后输出文件的文件名
   },
 

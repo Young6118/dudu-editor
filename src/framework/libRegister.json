@@ -1,0 +1,3 @@
+{
+  "router": "./lib/router/index.js"
+}

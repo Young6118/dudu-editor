@@ -1,0 +1,16 @@
+.vscode/
+.idea/
+node_modules/
+.DS_Store
+build/
+hooks/
+src/
+test/
+.babelrc
+.eslintrc
+.gitignore
+.npmignore
+.postcssrc
+.stylelintrc
+.gitlab-ci.yml
+package-lock.json

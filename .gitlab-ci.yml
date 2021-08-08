@@ -1,0 +1,88 @@
+# Select what we should cache between builds
+cache:
+  paths:
+    - node_modules/
+
+variables:
+  # =====================下面的变量定义大部分情况下都不用调整================================
+  
+before_script:
+  - echo "npm version "
+  - npm -v
+
+# lint使用npm本身的build过程完成
+stages:
+  - review
+  - install
+  - clean
+  - build
+  - deploy
+  - hook
+ 
+review:
+  stage: review
+  only:
+    refs:
+      - /^v\d+\.\d+\.\d+$/
+  script:
+    - sonar-scanner -Dsonar.projectKey=$CI_PROJECT_NAME -Dsonar.sources=./src/components/
+  tags:
+    - frontend
+
+install:
+  stage: install
+  only:
+    refs:
+      - /^v\d+\.\d+\.\d+$/
+  script:
+    - npm config set registry $NPM_MIHOYO_REGISTRY
+    - npm config get registry
+    - npm install --prefer-offline
+  tags:
+    - frontend
+
+clean:
+  stage: clean
+  only:
+    refs:
+      - /^v\d+\.\d+\.\d+$/
+  script:
+    - npm run clean
+  tags:
+    - frontend
+
+######################################
+# prd stage  ↓↓↓↓↓↓↓↓
+######################################
+
+build_prd:
+  stage: build
+  only:
+    refs:
+      - /^v\d+\.\d+\.\d+$/
+  artifacts:
+    paths:
+      - dist/
+  script:
+    - npm run build
+  tags:
+    - frontend
+
+deploy_prd:
+  stage: deploy
+  only:
+    refs:
+      - /^v\d+\.\d+\.\d+$/
+  script:
+    - npm publish
+  tags:
+    - frontend
+
+hook_prd:
+  stage: hook
+  only:
+    - tags
+  script:
+    - sh ./hooks/wxworkNotify.sh
+  tags:
+    - frontend

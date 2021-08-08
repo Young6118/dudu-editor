@@ -1,0 +1,53 @@
+{
+  "root": true,
+  "extends": [
+    "plugin:vue/essential",
+    "airbnb-base"
+  ],
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true
+  },
+  "plugins": [],
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "no-param-reassign": [
+      "error", { "props": false}
+    ],
+    "max-len": ["error", { "code": 120 }],
+    "indent": "off",
+    "camelcase": "off",
+    "func-names": "off",
+    "global-require": "off",
+    "import/no-dynamic-require": "off",
+    "import/extensions": [
+      "error",
+      {
+        "js": "never",
+        "vue": "never",
+        "png": "always",
+        "jpg": "always"
+      }
+    ],
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off"
+  },
+  "globals": {
+    "_": true,
+    "require": true,
+    "__dirname": true
+  }
+}

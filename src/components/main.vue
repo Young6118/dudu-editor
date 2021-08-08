@@ -10,12 +10,8 @@
 
 <script>
   import { Editor, EditorContent } from '@tiptap/vue-2';
-  import StarterKit from '@tiptap/starter-kit';
-  import TaskList from '@tiptap/extension-task-list';
-  import TaskItem from '@tiptap/extension-task-item';
-  import Highlight from '@tiptap/extension-highlight';
-  import CharacterCount from '@tiptap/extension-character-count';
   import MenuBar from './MenuBar';
+  import register from './register';
   import './main.scss';
 
   export default {
@@ -50,17 +46,7 @@
     mounted() {
       this.editor = new Editor({
         content: this.value,
-        extensions: [
-          StarterKit.configure({
-            history: true
-          }),
-          Highlight,
-          TaskList,
-          TaskItem,
-          CharacterCount.configure({
-            limit: 10000
-          })
-        ],
+        extensions: register,
         onUpdate: () => {
           // HTML
           this.$emit('input', this.editor.getHTML());

@@ -33,7 +33,7 @@ module.exports = env => ({
         exclude: /node_modules/
       },
       {
-        test: /\.(jpe?g|png|svg|gif)$/,
+        test: /\.(jpe?g|png|gif)$/,
         use: [{
           loader: 'url-loader',
           options: {
@@ -41,6 +41,13 @@ module.exports = env => ({
             name: '[path][name].[hash:8].[ext]'
           }
         }]
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          'babel-loader',
+          'vue-svg-loader'
+        ]
       },
       {
         test: /\.(ttf|eot|woff|woff2)$/,

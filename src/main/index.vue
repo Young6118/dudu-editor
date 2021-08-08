@@ -1,20 +1,37 @@
 <template>
-  <div class="test">
-    <div>1111111</div>
-    <demo-test>222</demo-test>
+  <div class="main">
+    <div>dudu-editor 嘟嘟富文本编辑器</div>
+    <dudu-editor v-model="value">222</dudu-editor>
+    <div>渲染展示</div>
+    <div class="output ProseMirror" v-html="value"></div>
   </div>
 </template>
 
 <script>
   import './index.scss';
 
-  import demoTestComponent from '../components/main';
-
   export default {
     name: 'demo',
 
     components: {
-      'demo-test': demoTestComponent
+    },
+
+    data() {
+      return {
+        value: ''
+      };
     }
   };
 </script>
+
+<style lang="scss" scoped>
+@import '../components/main.scss';
+
+.space {
+  height: 100px;
+}
+
+.output {
+  padding: 10px;
+}
+</style>

@@ -1,4 +1,5 @@
 const path = require('path');
+// eslint-disable-next-line import/extensions
 const pkgJson = require('../package.json');
 
 function resolve(dir) {
@@ -8,11 +9,11 @@ function resolve(dir) {
 // 生成组件的全局变量名
 const getLibName = () => pkgJson.name.replace(/-(\w)/g, (a, b) => b.toUpperCase());
 
-
 module.exports = {
   // 入口
   entry: {
-    main: resolve('src/components/main.vue')
+    main: resolve('src/components/main.js'),
+    com: resolve('src/components/com.js')
   },
 
   output: {
@@ -31,6 +32,9 @@ module.exports = {
       // 1、axios ，不带/
       // 2、@nuxt/nuxt
       // 3、art-template/lib/template-web
+      if (request.startsWith('@tiptap')) {
+        return callback();
+      }
       if (!request.includes('/') || request.startsWith('@') || /^[a-z]+/i.test(request)) {
         return callback(null, {
           commonjs: request,
@@ -45,6 +49,9 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        loader: 'babel-loader'
+      }, {
         test: /\.(css|scss)$/,
         use: [
           'vue-style-loader',
@@ -54,15 +61,14 @@ module.exports = {
               minimize: true
             }
           },
-          'postcss-loader',
           {
             loader: 'sass-loader',
             options: {
               implementation: require('sass')
             }
-          }
+          },
+          'postcss-loader'
         ]
-      }
-    ]
+      }]
   }
 };

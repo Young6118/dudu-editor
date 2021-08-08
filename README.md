@@ -43,7 +43,7 @@
 - [ ] switch function 配置功能开关
 
 ## 使用
-`npm i dudu-editor`
+`npm i @youngchou1997/dudu-editor`
 
 
 ### 进展记录

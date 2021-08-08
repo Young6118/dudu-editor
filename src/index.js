@@ -14,7 +14,7 @@ registerComponent(Vue);
 // 注册过滤器
 registerFilters(Vue);
 
-require('./mock.js');
+// require('./mock.js');
 
 // 注册框架服务
 registerFrameworkServices(Vue)

@@ -59,7 +59,6 @@ module.exports = env => ({
     // new CleanWebpackPlugin(['dist'], {
     //   root: resolve('./')
     // }),
-    new VueLoaderPlugin(),
-    new webpack.BannerPlugin(`Copyright © 2011 - ${(new Date()).getFullYear()} miHoYo. All Rights Reserved`)
+    new VueLoaderPlugin()
   ]
 });

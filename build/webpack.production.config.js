@@ -6,8 +6,7 @@ function resolve(dir) {
 }
 
 // 生成组件的全局变量名
-const getLibName = () => pkgJson.name.replace(/-(\w)/g, (a, b) => b.toUpperCase())
-    .replace('mihoyo', 'miHoYo');
+const getLibName = () => pkgJson.name.replace(/-(\w)/g, (a, b) => b.toUpperCase());
 
 
 module.exports = {

@@ -1,3 +1,4 @@
+// 这里是我们的组件
 <template>
   <div class="demo">
     <span class="demo__text">222222333{{text}}</span>

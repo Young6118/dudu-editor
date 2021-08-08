@@ -60,9 +60,7 @@ module.exports = {
     // 默认注释了，需要去掉注释
     // proxy: {
     //   // xxxxx 表示当前项目请求url里的关键字，匹配到就把请求代理到target指定的域
-    //   // 如 localhost:8080/xxx/api/user/get 会被代理到 https://xxx.mihoyo.com/xxx/api/user/get
     //   '/xxx': {
-    //     target: 'https://xxx.mihoyo.com', // 代理服务器路径
     //     changeOrigin: true
     //   }
     // }

@@ -35,7 +35,7 @@ install:
     refs:
       - /^v\d+\.\d+\.\d+$/
   script:
-    - npm config set registry $NPM_MIHOYO_REGISTRY
+    - npm config set registry $NPM_REGISTRY
     - npm config get registry
     - npm install --prefer-offline
   tags:

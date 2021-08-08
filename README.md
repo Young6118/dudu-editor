@@ -2,6 +2,9 @@
 
 基于 tiptap v2 的开源富文本编辑器
 
+## demo
+### [demo](http://youngchou1997.github.io/dudu-editor)
+
 ## 介绍
 ### 当前具有以下特色功能：
 - 基本的文本样式

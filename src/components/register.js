@@ -24,8 +24,14 @@ import Strike from '@tiptap/extension-strike';
 import TaskList from '@tiptap/extension-task-list';
 import TaskItem from '@tiptap/extension-task-item';
 import Text from '@tiptap/extension-text';
+import Typography from '@tiptap/extension-typography';
 import UnderLine from '@tiptap/extension-underline';
 // import CollaborationKit from './extensions/CollaborationKit';
+
+import lowlight from 'lowlight';
+import { VueNodeViewRenderer } from '@tiptap/vue-2';
+import HighlightCodeBlock from './extensions/HighlightCodeBlock/HighlightCodeBlock';
+import Paper from './extensions/Paper/Paper';
 
 export default [
   Bold,
@@ -36,7 +42,13 @@ export default [
   }),
   Code,
   CodeBlock,
-  CodeBlockLowlight,
+  CodeBlockLowlight
+    .extend({
+      addNodeView() {
+        return VueNodeViewRenderer(HighlightCodeBlock)
+      }
+    })
+    .configure({ lowlight }),
   Document,
   Focus,
   FontFamily,
@@ -51,10 +63,12 @@ export default [
   ListItem,
   OrderedList,
   Paragraph,
+  Paper,
   Strike,
   TaskList,
   TaskItem,
   Text,
+  Typography,
   // StarterKit.configure({
   //   history: true
   // }),

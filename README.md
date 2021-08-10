@@ -3,16 +3,21 @@
 基于 tiptap v2 的开源富文本编辑器
 
 ## demo
+
 ### [demo](http://youngchou1997.github.io/dudu-editor)
 
 ## 介绍
-### 当前具有以下特色功能：
-- 基本的文本样式
 
-### 计划功能：
+### 当前具有以下特色功能
+
+- 基本的文本样式
+- 画布功能
+
+### 计划功能
+
 - 方便部署的实时协同编辑
 
-### 当前已有菜单：
+### 当前已有菜单
 
 - undo 撤销
 - redo 重做
@@ -29,13 +34,15 @@
 - code 代码块
 - quote 块级引用
 - hr 分割线
+- drawing 画布
+- image 图片
 - text-wrap 换行
 - clean 清除格式
 
-### 后续计划：
+### 后续计划
 
 - [ ] table 表格功能
-- [ ] image 图片
+- [x] image 图片
 - [ ] music 音乐
 - [ ] video 视频
 - [ ] link 超链接
@@ -47,8 +54,8 @@
 - [ ] switch function 配置功能开关
 
 ## 使用
-`npm i dudu-editor`
 
+`npm i dudu-editor`
 
 ### 进展记录
 

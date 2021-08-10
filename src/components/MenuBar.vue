@@ -145,6 +145,19 @@ export default {
           type: 'divider'
         },
         {
+          icon: 'drawing',
+          title: '画板',
+          action: () => this.editor.commands.insertContent({ type: 'paper' })
+        },
+        {
+          icon: 'image',
+          title: '图片',
+          action: this.addImage
+        },
+        {
+          type: 'divider'
+        },
+        {
           icon: 'text-wrap',
           title: '换行',
           action: () => this.editor.chain().focus().setHardBreak().run()
@@ -160,6 +173,16 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    addImage() {
+      // eslint-disable-next-line no-alert
+      const url = window.prompt('请填入图片在线地址');
+
+      if (url) {
+        this.editor.chain().focus().setImage({ src: url }).run();
+      }
+    }
   }
 };
 </script>

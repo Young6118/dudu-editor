@@ -18,7 +18,7 @@
 
     data() {
       return {
-        value: ''
+        value: '<p>拖动可以排序</p><img src="http://youngchou.cn/0.jpg" /><img src="http://youngchou.cn/1.jpg" /><img src="http://youngchou.cn/2.jpg" /><img src="http://youngchou.cn/4.jpg" /><br><div data-type="paper"></div>'
       };
     }
   };

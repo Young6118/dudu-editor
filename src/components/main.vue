@@ -9,6 +9,7 @@
 </template>
 
 <script>
+  // 协作状态样式优化 https://www.tiptap.dev/examples/collaborative-editing
   import { Editor, EditorContent } from '@tiptap/vue-2';
   import MenuBar from './MenuBar';
   import register from './register';

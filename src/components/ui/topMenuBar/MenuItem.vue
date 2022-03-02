@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import icon from './icon/index';
+import icon from '../icon/index';
 
 export default {
   components: {

@@ -10,7 +10,7 @@
 
 <script>
   import { Editor, EditorContent } from '@tiptap/vue-2';
-  import MenuBar from './MenuBar';
+  import MenuBar from './ui/topMenuBar/MenuBar';
   import register from './register';
   import './main.scss';
 

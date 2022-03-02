@@ -30,8 +30,8 @@ import UnderLine from '@tiptap/extension-underline';
 
 import lowlight from 'lowlight';
 import { VueNodeViewRenderer } from '@tiptap/vue-2';
-import HighlightCodeBlock from './extensions/HighlightCodeBlock/HighlightCodeBlock';
-import Paper from './extensions/Paper/Paper';
+import HighlightCodeBlock from './plugins/nodes/HighlightCodeBlock/HighlightCodeBlock';
+import Paper from './plugins/nodes/Paper/Paper';
 
 export default [
   Bold,
